@@ -1,0 +1,42 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require reset
+ *= require font-awesome
+ */
+
+$header_bg: #FE5F55
+$thin_nav_bg: #333745
+$borders: #071108
+$alt_1: #C7DBE6
+$lighter_borders: #BFB1C1
+$sidebar_bg: #F6E8EA
+$sidebar_item_bg: darken($sidebar_bg, 8%)
+$sidebar_borders: darken($sidebar_bg, 10%)
+$input_borders: darken($sidebar_bg, 10%)
+$thin_nav_active: #E63462
+
+$header_height: 50px
+$thin_nav_width: 100px
+$sidebar_width: 300px
+
+@import "general"
+@import "flash"
+@import "header"
+@import "sidebar"
+@import "content"
+@import "thin_nav"
+
+@import "pages/homepage"
+@import "pages/archive"
+@import "pages/history"
+@import "pages/contacts"

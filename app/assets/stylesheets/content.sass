@@ -1,0 +1,129 @@
+.content
+  position: fixed
+  top: 50px
+  right: 0
+  bottom: 0px
+  left: $thin_nav_width + $sidebar_width
+  overflow: auto
+
+  @media only screen and (max-width: 750px)
+    left: 0
+  
+  .content-title
+    margin: 30px 34px 0 34px
+    border-bottom: 1px solid #e1e1e1
+
+    @media only screen and (max-width: 750px)
+      margin: 0
+
+    input
+      width: 100%
+      border: 0
+      font-size: 18px
+      outline: none
+      padding: 10px 280px 10px 15px
+
+      @media only screen and (max-width: 750px)
+        padding-right: 15px
+
+  .content-body
+    position: fixed
+    top: 145px
+    bottom: 0px
+    right: 0
+    left: $thin_nav_width + $sidebar_width
+
+    @media only screen and (max-width: 750px)
+      left: 0
+    
+    .editor-toolbar
+      height: 48px !important
+      border: 0
+      margin: -20px 20px 0 20px
+      z-index: 10
+      padding: 0 20px
+
+      @media only screen and (max-width: 750px)
+        padding: 0 20px
+        margin: 0 0 0 -12px
+
+    .CodeMirror
+      position: fixed
+      border: 0
+      top: 145px
+      bottom: 0px
+      left: $thin_nav_width + $sidebar_width
+      right: 0
+      -webkit-overflow-scrolling: touch
+      padding: 30px 45px
+
+      @media only screen and (max-width: 750px)
+        left: 0
+        top: 150px
+        padding: 40px 10px 0 10px
+
+  .content-actions
+    position: fixed
+    right: 27px
+    height: 40px
+    top: 80px
+    padding: 3px
+
+    @media only screen and (max-width: 750px)
+      left: 0
+      right: 0
+      top: 91px
+      background: #fff
+      border-top: 1px solid #e1e1e1
+      border-bottom: 1px solid #e1e1e1
+      display: flex
+    
+    a.history
+      float: left
+      margin: 7px 20px 0 0
+      font-size: 19px
+      color: #555
+      text-decoration: none
+
+      @media only screen and (max-width: 750px)
+        display: none
+
+    input[type="submit"], a.delete
+      float: left
+      display: block
+      border: 0
+      padding: 6px 25px
+      text-transform: uppercase
+      font-weight: 600
+      background: #75bb8f
+      color: white
+      font-size: 12px
+      margin: 3px
+      outline: none
+      height: 27px
+      border-radius: 3px
+      cursor: pointer
+
+      &:hover
+        background: darken(#75bb8f, 10%)
+
+      &.delete
+        float: left
+        background: lighten(#BB7577, 15%)
+        text-decoration: none
+        padding: 8px 8px 0 8px
+        margin-right: 15px
+
+        &:hover
+          background: #BB7577
+
+      @media only screen and (max-width: 750px)
+        flex: 1
+        text-align: center
+
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar
+  display: none !important
+
+@media only screen and (max-width: 750px)
+  .content
+    left: 0

@@ -1,0 +1,17 @@
+<ul class="thin-nav">
+  <li <% if @active_section == :notes %>class="active"<% end %>>
+    <%= link_to notes_path do %>
+      <i class="fa fa-sticky-note"></i>
+      <span class="desc">Notes</span>
+    <% end %>
+  </li>
+  
+  <% if ENV['ENABLE_CONTACTS'] %>
+    <li <% if @active_section == :contacts %>class="active"<% end %>>
+      <%= link_to contacts_path do %>
+        <i class="fa fa-users"></i>
+        <span class="desc">Contacts</span>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

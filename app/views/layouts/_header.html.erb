@@ -1,0 +1,38 @@
+<div class="header">
+  <% unless params[:action] == 'index' %>
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  <% end %>
+
+  <h1><%= link_to "Trunk", root_path %></h1>
+  
+  <% if user_signed_in? %>
+    <div class="header-search">
+      <%= form_tag search_notes_path, method: :get do %>
+        <%= text_field_tag :keywords, params[:keywords], placeholder: "Search..." %>
+      <% end %>
+    </div>
+    
+    <% if @active_section == :notes %>
+      <%= link_to "New Note", new_note_path, class: 'header-newnote' %>
+      <%= link_to "Archives", archive_notes_path, class: 'header-lastleft' %>
+    <% elsif @active_section == :contacts %>
+      <%= link_to "New Contact", new_contact_path, class: 'header-lastleft' %>
+    <% else %>
+      <div class="header-lastleft">&nbsp;</div>
+    <% end %>
+  <% else %>
+    <div class="header-lastleft">&nbsp;</div>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= link_to "Settings", edit_user_registration_path, class: 'header-settings' %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Login", new_user_session_path %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+  <% end %>
+</div>

@@ -1,0 +1,30 @@
+<%= form_for(@note) do |f| %>
+  <% if @note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+      <ul>
+      <% @note.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="content-title">
+    <%= f.text_field :title, placeholder: "Title" %>
+  </div>
+
+  <div class="content-body">
+    <%= f.text_area :content, placeholder: "Enter your note here" %>
+  </div>
+
+  <div class="content-actions">
+    <% if @note.id.present? %>
+      <%= link_to "", note_history_path(@note), class: "history fa fa-history" %>
+      <%= link_to "Archive", note_path(@note), method: :delete, class: "delete" %>
+    <% end %>
+    
+    <%= f.submit %>
+  </div>
+<% end %>

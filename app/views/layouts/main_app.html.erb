@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trunk</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    
+    <link rel="apple-touch-icon" href="<%= image_path('touch-icon.png') %>">
+    <link rel="shortcut icon" href="<%= image_path('touch-icon.png') %>">
+    
+    <%= stylesheet_link_tag    'simplemde',   media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'layouts/flash' %>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/thin_nav' %>
+
+    <%= render @sidebar_view || 'notes/sidebar' %>
+    
+    <div class="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>
